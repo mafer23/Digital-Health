@@ -88,6 +88,75 @@ También expone rutas bajo:
 /api/patients
 ```
 
+## 6. Cargar datos sintéticos desde DBeaver
+
+Si deseas poblar la base de datos con información de prueba, puedes hacerlo directamente desde DBeaver ejecutando consultas SQL sobre la base de datos conectada.
+
+### Pasos
+
+1. Abre DBeaver y conecta PostgreSQL a la base de datos creada.
+2. Abre una nueva consulta SQL.
+3. Ejecuta sentencias `INSERT` en la tabla `patients`.
+
+### Ejemplo de carga de datos sintéticos
+
+```sql
+INSERT INTO patients (
+  nombre,
+  document,
+  fechanacimiento,
+  telefono,
+  eps,
+  prioridad,
+  estado,
+  tipo_documento,
+  eps_codigo,
+  genero
+) VALUES
+(
+  'Ana Gómez',
+  '1010101010',
+  '1990-05-14',
+  '3001112233',
+  'Sura',
+  'Alta',
+  'Activo',
+  'CC',
+  'EPS001',
+  'Femenino'
+),
+(
+  'Carlos Pérez',
+  '2020202020',
+  '1985-08-21',
+  '3002223344',
+  'Nueva EPS',
+  'Media',
+  'Activo',
+  'CC',
+  'EPS002',
+  'Masculino'
+),
+(
+  'María López',
+  '3030303030',
+  '1998-12-03',
+  '3003334455',
+  'Sanitas',
+  'Baja',
+  'Inactivo',
+  'TI',
+  'EPS003',
+  'Femenino'
+);
+```
+
+### Nota importante
+
+- Asegúrate de que la tabla `patients` exista en la base de datos.
+- Si la tabla está vacía, los `INSERT` funcionarán correctamente.
+- Puedes repetir la consulta con distintos valores para agregar más registros.
+
 ## Estructura general
 
 - `src/app.js`: configuración de Express
