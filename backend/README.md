@@ -191,3 +191,6 @@ erDiagram
 ```
 
 > Este diagrama está basado en los campos usados por la API en el repositorio actual.
+>
+> <img width="437" height="331" alt="image" src="https://github.com/user-attachments/assets/143c2508-822f-4bd0-b875-80a1d61a3706" />
+
