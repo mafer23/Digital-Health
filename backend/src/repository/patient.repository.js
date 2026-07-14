@@ -78,7 +78,7 @@ class PatientRepository {
             } = patientData;
 
              const result = await pool.query(
-                'UPDATE patients SET nombre=$1, document=$2, fechanacimiento=$3, telefono=$4, eps=$5, prioridad=$6, estado=$7, tipo_documento=$8, eps_codigo=$9, genero=$10 RETURNING *',
+                'UPDATE patients SET nombre=$1, document=$2, fechanacimiento=$3, telefono=$4, eps=$5, prioridad=$6, estado=$7, tipo_documento=$8, eps_codigo=$9, genero=$10 WHERE id=$11 RETURNING *',
                 [
                     nombre,
                     document,
@@ -90,6 +90,7 @@ class PatientRepository {
                     tipo_documento,
                     eps_codigo,
                     genero,
+                    id
                 ],
             );
 

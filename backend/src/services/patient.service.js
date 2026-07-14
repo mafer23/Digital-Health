@@ -72,3 +72,5 @@ class PatientService {
 
 
 }
+
+module.exports = new PatientService();
