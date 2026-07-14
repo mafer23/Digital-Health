@@ -157,6 +157,64 @@ INSERT INTO patients (
 - Si la tabla está vacía, los `INSERT` funcionarán correctamente.
 - Puedes repetir la consulta con distintos valores para agregar más registros.
 
+## 7. Sesión de ejemplo de las rutas
+
+Una vez el servidor esté corriendo, puedes probar estas rutas con Postman, Insomnia o curl.
+
+### Obtener todos los pacientes
+
+```http
+GET http://localhost:3000/api/patients
+```
+
+### Obtener un paciente por ID
+
+```http
+GET http://localhost:3000/api/patients/1
+```
+
+### Crear un paciente
+
+```http
+POST http://localhost:3000/api/patients
+Content-Type: application/json
+```
+
+```json
+{
+  "nombre": "Laura Torres",
+  "document": "1234567890",
+  "fechanacimiento": "1992-03-10",
+  "telefono": "3001234567",
+  "eps": "Sura",
+  "prioridad": "Alta",
+  "estado": "Activo",
+  "tipo_documento": "CC",
+  "eps_codigo": "EPS004",
+  "genero": "Femenino"
+}
+```
+
+### Actualizar un paciente
+
+```http
+PUT http://localhost:3000/api/patients/1
+Content-Type: application/json
+```
+
+```json
+{
+  "nombre": "Laura Torres Actualizada",
+  "estado": "Inactivo"
+}
+```
+
+### Eliminar un paciente
+
+```http
+DELETE http://localhost:3000/api/patients/1
+```
+
 ## Estructura general
 
 - `src/app.js`: configuración de Express
